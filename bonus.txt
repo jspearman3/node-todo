@@ -1,0 +1,5 @@
+In addition to food name and price, I added a quantity so if Emeril wanted more items than one, he could store that information without adding multiple instances of that item. The total cost is updated to include the quantity.
+
+Additionally, adding a food item to the database with the same name and price as an existing entry will overwrite the existing entry's quantity. This was done, again to eliminate multiple entries. I left the option open of having two differently priced items of the same name to give Emeril more flexibility if he wanted to have a more expensive version of a type of food.
+
+The only other additional things added were UI changes, where the avaliable food in the database was shown in a cleaner table format with a remove button instead of a checkbox. This makes the interface more intuitive

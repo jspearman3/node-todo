@@ -48,12 +48,14 @@
 					<tr>
 						<th align='center'>Food</th>
 						<th align='center'>Price</th>
+						<th align='center'>Quantity</th>
 						<th align='center'>Remove</th>
 					</tr>
 					<!-- LOOP OVER THE FOOD ITEMS IN $scope.food -->
 					<tr ng-repeat="f in food">
 						<td align='center'>{{ f.text }}</td>
 						<td align='center'>${{ f.price.toFixed(2) }}</td>
+						<td align='center'>{{ f.quantity }}</td>
 						<td align='center'>
 							<label>
 								<button type="submit" ng-click="deleteFood(f._id)">Remove</button>
@@ -80,6 +82,8 @@
 						<input type="text" class="form-control input-lg text-center"  placeholder="Food name" ng-model="formData.text">
 						<p align='left'> Enter price: </p>
 						<input type="text" class="form-control input-lg text-center" placeholder="Food price" ng-model="formData.price">
+						<p align='left'> Enter quantity: </p>
+						<input type="text" class="form-control input-lg text-center" placeholder="Quantity" ng-model="formData.quantity">
 					</div>
 
 					<!-- createFood() WILL CREATE NEW FOOD ITEM -->

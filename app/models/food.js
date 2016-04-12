@@ -9,5 +9,10 @@ module.exports = mongoose.model('Food', {
     price: {
         type: Number,
         default: 0.0
+    },
+
+    quantity: {
+        type: Number,
+        default: 0
     }
 });

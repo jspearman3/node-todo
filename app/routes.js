@@ -21,7 +21,7 @@ function getTotalCost(res) {
         var subtotal = 0;
 
         for (var i = 0; i < food.length; i++) {
-            subtotal += food[i].price;
+            subtotal += food[i].price * food[i].quantity;
         }
 
         var totalCost = subtotal * 1.075;
@@ -43,10 +43,14 @@ module.exports = function (app) {
     app.post('/api/food', function (req, res) {
 
         // create a food item, information comes from AJAX request from Angular
-        Food.create({
+        Food.findOneAndUpdate({
             text: req.body.text,
-            price: req.body.price,
+            price: req.body.price
+        }, {
+            quantity: req.body.quantity,
             done: false
+        }, {
+            upsert: true
         }, function (err, food) {
             if (err)
                 res.send(err);
